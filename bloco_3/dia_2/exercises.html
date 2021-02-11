@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <title>HTML</title>
     <style>
+      body {
+        font-size: 16px;
+      }
       h1 {
         font-size: 65px;
         color: orange;
+        font-family: sans-serif;
+      }
+      p {
+        font-weight: 600;
+        font-size: 3rem;
+      }
+      ul {
+        list-style: none;
       }
       li {
         background-color: #246;
       }
       .bgcolor {
         background-color: gray;
+        text-decoration: overline underline;
+        line-height: 3em;
+        text-align: center;
+        font-style: italic;
       }
-
+      li:nth-child(1) {
+        background-color: yellow;
+      }
+      li:nth-child(2) {
+        background-color: red;
+      }
+      li:nth-child(3) {
+        background-color: brown;
+      }
     </style>
   </head>
   <body>
@@ -26,11 +49,5 @@
       <li>Marrom</li>
     </ul>
 
-    <!-- Exercícios
-     1 - Modifique o tamanho do h1 para 65 pixels
-     2 - Modifique a cor do texto do h1 para laranja
-     3 - Modifique a cor de fundo da lista não ordenada
-     4 - Crie uma classe para modificar a cor de fundo da tag p e da ul ao mesmo tempo
-    -->
   </body>
 </html>
