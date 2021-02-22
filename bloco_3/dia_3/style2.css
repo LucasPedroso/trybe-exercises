@@ -1,0 +1,30 @@
+* {
+    margin: 2rem;
+}
+
+img {
+    width: 100px;
+}
+
+.baloon{
+    position: relative;
+    width: 200px;
+    bottom: 70px;
+    margin-right: 0px;
+}
+
+.word {
+    position: absolute;
+    z-index: 999;
+    top: 300px;
+    left: 250px;
+}
+.super-mario {
+    display: block;
+}
+.gomba {
+    display: block;
+}
+.bower {
+    margin: 0px;
+}
