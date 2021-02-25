@@ -15,3 +15,8 @@ for (const i in numbers) {
     console.log('for in', numbers[i]);
   }
 }
+
+/* Para o segundo exercício, você deve somar todos os valores 
+contidos no array e imprimir o resultado; */
+console.log(numbers.reduce((a, b) => a + b));
+
