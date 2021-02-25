@@ -18,5 +18,10 @@ for (const i in numbers) {
 
 /* Para o segundo exercício, você deve somar todos os valores 
 contidos no array e imprimir o resultado; */
-console.log(numbers.reduce((a, b) => a + b));
+let somaNumbers = numbers.reduce((a, b) => a + b);
+console.log(somaNumbers);
 
+/* Para o terceiro exercício, calcule e imprima a média aritmética 
+dos valores contidos no array; */
+
+console.log(somaNumbers / numbers.length);
