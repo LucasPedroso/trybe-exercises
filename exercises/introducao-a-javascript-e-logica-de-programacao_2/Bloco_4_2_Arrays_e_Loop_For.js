@@ -91,12 +91,12 @@ for (let i = 0; i < aux; i++) {
 
   for (let j = 0; j < aux - i; j++) {
     console.log(j);
-    
+
     if (numbers[j] > numbers[j + 1]) {
       let position = numbers[j];
 
-      numbers[j] = numbers[j+1];
-      numbers[j+1] = position;
+      numbers[j] = numbers[j + 1];
+      numbers[j + 1] = position;
     }
   }
 }
@@ -121,3 +121,26 @@ for (let i = aux2; i > 0; i -= 1) {
   }
 }
 console.log(`Numbers Ordenado Decrescente: ${numbers}`);
+
+/* Agora você irá criar um novo array a partir do array numbers, sem perdê - lo.
+Cada valor do novo array deverá ser igual ao valor correspondente no array numbers 
+multiplicado pelo seguinte.Por exemplo: o primeiro valor do novo array deverá ser 45, 
+pois é a multiplicação de 5(primeiro valor) e 9(valor seguinte).
+Já o segundo valor do novo array deverá ser 27, pois é a multiplicação de 9(segundo valor)
+e 3(valor seguinte), e assim por diante.Caso não haja próximo valor, 
+a multiplicação deverá ser feita por 2. Faça isso utilizando o for e o método push.
+O resultado deve ser o array abaixo:
+
+[45, 27, 57, 1330, 560, 800, 200, 70, 945, 54] */
+numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let numbersMultiplier = [];
+
+for (let index = 0; index < numbers.length; index++) {
+  if (index === numbers.length -1) {
+    numbersMultiplier.push(numbers[index] * 2);
+    break;
+  }
+  numbersMultiplier.push(numbers[index] * numbers[index + 1]);
+}
+console.log(numbersMultiplier);
+ 
