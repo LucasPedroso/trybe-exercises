@@ -72,3 +72,8 @@ for (let index = 0; index <= 24; index += 1) {
   array[index] = index + 1;
 }
 console.log(array);
+
+/* Utilizando o array criado no exercício anterior imprima o resultado da 
+divisão de cada um dos elementos por 2 . */
+
+array.forEach(num => console.log(num / 2));
