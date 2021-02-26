@@ -77,3 +77,23 @@ console.log(array);
 divisão de cada um dos elementos por 2 . */
 
 array.forEach(num => console.log(num / 2));
+
+/* BONUS */
+
+/* Estudado e compreendido - referência: 
+http://devfuria.com.br/logica-de-programacao/exemplos-na-linguagem-c-do-algoritmo-bubble-sort/ */
+
+let aux = numbers.length - 1;
+for (let i = 1; i < aux; i++) {
+  console.log("\n[%d] ", i);
+  for (let j = 0; j < aux - i; j++) {
+    console.log(j);
+    if (numbers[i] < numbers[j]) {
+      let position = numbers[i];
+
+      numbers[i] = numbers[j];
+      numbers[j] = position;
+    }
+  }
+}
+console.log(`Numbers Ordenado: ${numbers}`);
