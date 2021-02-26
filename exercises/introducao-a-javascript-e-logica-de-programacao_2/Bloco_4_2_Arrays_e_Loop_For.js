@@ -1,4 +1,6 @@
+//let numbers = [2, 4, 6, 22, 70, 8, 100, 2, 34, 28];
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
 
 /* Nesse primeiro exercício, percorra o array imprimindo todos os 
 valores nele contidos com a função console.log() ; */
@@ -46,3 +48,10 @@ for (let index = 0; index < numbers.length; index += 1) {
   }
 }
 console.log(maiorNumbersArray);
+
+/* Descubra quantos valores ímpares existem no array e imprima o resultado. 
+Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado"; */
+
+let qtdNumbersImpares = numbers.filter(num => num % 2 == 1).length;
+console.log(qtdNumbersImpares ? qtdNumbersImpares : 'nenhum valor ímpar encontrado');
+
