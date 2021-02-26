@@ -83,17 +83,41 @@ array.forEach(num => console.log(num / 2));
 /* Estudado e compreendido - referência: 
 http://devfuria.com.br/logica-de-programacao/exemplos-na-linguagem-c-do-algoritmo-bubble-sort/ */
 
+/* Ordene o array numbers em ordem crescente e imprima seus valores; */
+
 let aux = numbers.length - 1;
-for (let i = 1; i < aux; i++) {
+for (let i = 0; i < aux; i++) {
   console.log("\n[%d] ", i);
+
   for (let j = 0; j < aux - i; j++) {
     console.log(j);
-    if (numbers[i] < numbers[j]) {
-      let position = numbers[i];
+    
+    if (numbers[j] > numbers[j + 1]) {
+      let position = numbers[j];
 
-      numbers[i] = numbers[j];
-      numbers[j] = position;
+      numbers[j] = numbers[j+1];
+      numbers[j+1] = position;
     }
   }
 }
-console.log(`Numbers Ordenado: ${numbers}`);
+console.log(`Numbers Ordenado Crescente: ${numbers}`);
+
+/* Ordene o array numbers em ordem decrescente e imprima seus valores; */
+
+let aux2 = numbers.length - 1;
+
+for (let i = aux2; i > 0; i -= 1) {
+  console.log("\n[%d] ", i);
+
+  for (let j = 0; j < i; j += 1) {
+    console.log(j);
+
+    if (numbers[j] < numbers[j + 1]) {
+      let position = numbers[j];
+
+      numbers[j] = numbers[j + 1];
+      numbers[j + 1] = position;
+    }
+  }
+}
+console.log(`Numbers Ordenado Decrescente: ${numbers}`);
