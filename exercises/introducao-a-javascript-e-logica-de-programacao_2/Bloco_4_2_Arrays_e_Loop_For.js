@@ -55,3 +55,13 @@ Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado"; *
 let qtdNumbersImpares = numbers.filter(num => num % 2 == 1).length;
 console.log(qtdNumbersImpares ? qtdNumbersImpares : 'nenhum valor ímpar encontrado');
 
+/* Utilizando for , descubra qual o menor valor contido no array e imprima-o; */
+let menorNumbers;
+for (let index = 0; index < numbers.length; index++) {
+  if (index == 0) {
+    menorNumbers = numbers[index];
+  } else if (menorNumbers > numbers[index]) {
+    menorNumbers = numbers[index];
+  }
+}
+console.log(menorNumbers);
