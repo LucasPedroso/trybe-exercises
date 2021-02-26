@@ -57,7 +57,7 @@ console.log(qtdNumbersImpares ? qtdNumbersImpares : 'nenhum valor ímpar encontr
 
 /* Utilizando for , descubra qual o menor valor contido no array e imprima-o; */
 let menorNumbers;
-for (let index = 0; index < numbers.length; index++) {
+for (let index = 0; index < numbers.length; index += 1) {
   if (index == 0) {
     menorNumbers = numbers[index];
   } else if (menorNumbers > numbers[index]) {
@@ -65,3 +65,10 @@ for (let index = 0; index < numbers.length; index++) {
   }
 }
 console.log(menorNumbers);
+
+/* Utilizando for , crie uma array que vá de 1 até 25 e imprima o resultado; */
+let array = [];
+for (let index = 0; index <= 24; index += 1) {
+  array[index] = index + 1;
+}
+console.log(array);
