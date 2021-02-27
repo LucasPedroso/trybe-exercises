@@ -55,3 +55,45 @@ for (let index = 1; index <= Math.ceil(n / 2); index += 1) {
   positionCount += 2;
   console.log(result);
 }
+
+/* Faça uma pirâmide com n asteriscos de base que seja vazia no meio. 
+Assuma que o valor de n será sempre ímpar: */
+
+/* Por último, façamos com que a variável seja incrementada com o valor correspondente a cada loop;
+n = 7 */
+
+if (n % 2 === 1) {
+  positionCount = 1;
+} else {
+  positionCount = 2;
+}
+
+for (let index = 1; index <= Math.ceil(n / 2); index += 1) {  
+  let spaceBlank = (n - positionCount) / 2;
+  let spaceBlankMid, result;
+  let space = ' ';
+  let ast2 = '*';
+
+  const asteriscos = ast2.repeat(positionCount);
+
+  if (positionCount === n) {
+    result = space.repeat(spaceBlank).concat(asteriscos);
+    
+  } else if (positionCount > 1) {
+    spaceBlankMid = space.repeat(positionCount - 2)
+    result = space.repeat(spaceBlank)
+                        .concat(ast2)
+                        .concat(spaceBlankMid)
+                        .concat(ast2)
+                        .concat(space.repeat(spaceBlank));
+  } else {
+    spaceBlankMid = space.repeat(positionCount);
+    result = space.repeat(spaceBlank)
+                        .concat(ast2)
+                        .concat(space.repeat(spaceBlank));
+  }
+  
+  
+  positionCount += 2;
+  console.log(result);
+}
