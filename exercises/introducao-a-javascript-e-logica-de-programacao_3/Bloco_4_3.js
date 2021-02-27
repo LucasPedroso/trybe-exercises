@@ -1,4 +1,4 @@
-const n = 8;
+const n = 11;
 ast = '*';
 
 /* Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualquer, 
@@ -80,7 +80,7 @@ for (let index = 1; index <= Math.ceil(n / 2); index += 1) {
     result = space.repeat(spaceBlank).concat(asteriscos);
     
   } else if (positionCount > 1) {
-    spaceBlankMid = space.repeat(positionCount - 2)
+    spaceBlankMid = space.repeat(positionCount - 2);
     result = space.repeat(spaceBlank)
                         .concat(ast2)
                         .concat(spaceBlankMid)
@@ -97,3 +97,18 @@ for (let index = 1; index <= Math.ceil(n / 2); index += 1) {
   positionCount += 2;
   console.log(result);
 }
+
+/* Faça um programa que diz se um número definido numa variável é primo ou não.
+Um número primo é um número que só é divisível por 1 e por ele mesmo, ou seja, 
+a divisão dele com quaisquer outros números dá resto diferente de zero.
+Dica: você vai precisar de fazer um loop que vá de 0 ao número definido; 
+Além disso, vai precisar de fazer uma checagem a cada iteração e armazenar 
+os resultados em algum lugar. */
+
+//Retirado de https://stackoverflow.com/questions/40200089/number-prime-test-in-javascript
+const isPrime = num => {
+  for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+      if(num % i === 0) return false; 
+  return num > 1;
+}
+console.log(isPrime(n));
