@@ -11,7 +11,7 @@ let info = {
 console.log(`Bem-vinda, ${info.personagem}`);
 
 /* Valor esperado no console:
-Copiar
+
   {
     personagem: 'Margarida',
     origem: 'Pato Donald',
@@ -20,3 +20,15 @@ Copiar
   }; */
 info['recorrente'] = 'Sim';
 console.log(info);
+
+/* 
+Faça um for/in que mostre todas as chaves do objeto.
+Valor esperado no console:
+
+  personagem
+  origem
+  nota
+  recorrente */
+for (const key in info) {
+    console.log(key);
+}
