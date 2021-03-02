@@ -73,3 +73,15 @@ function highestCountInArrayOfObject(output) {
   });
   return result.el;
 }
+
+/* Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+Valor de teste: N = 5 .
+Valor esperado no retorno da função: 1+2+3+4+5 = 15 . */
+const sumOfOneToNumber = (number) => {
+  let output = 0;
+  for (let index = 1; index <= number; index += 1) {
+    output += index;
+  }
+  return output;
+}
+console.log(sumOfOneToNumber(5));
