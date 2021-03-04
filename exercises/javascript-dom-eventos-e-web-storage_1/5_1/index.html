@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.1</title>
+
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    <div class="main-content">
+      <div class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </div>
+    </div>
+    <script>
+        /* Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+        - document.getElementById()
+        - document.getElementsByClassName()
+        - document.getElementsByTagName() */
+
+        /* 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo. */
+        const textToUpperCaseByTag = (element, index) => {
+          document.getElementsByTagName(element)[index].style.textTransform = 'uppercase';
+        }
+        textToUpperCaseByTag('p', 0);
+        
+        /* 1. Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício) */
+        let textMyFuture = 'Trabalhando na área que gosto com uma evolução explosiva.';
+        function changeTextElementsByTag(element, index = 'all', text, fn) { //implementado uma função como parâmetro para estudo.
+          if (index === 'all') {
+            if (typeof fn !== 'function') { return console.log('Você precisa passar uma função como quarto parâmetro.');}
+            let arrayTags = document.getElementsByTagName(element);
+            for (let index = 0; index < arrayTags.length; index++) {
+              console.log(index);
+              fn(element, index);
+            }
+            return;
+          } 
+          document.getElementsByTagName(element)[index].innerHTML = text;
+        }
+        changeTextElementsByTag('p', 1, textMyFuture);
+        //changeTextElementsByTag('p', 'all', textMyFuture, textToUpperCaseByTag);
+
+        /* 2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)). */
+        let colorTrybe = 'rgb(76,164,109)';
+        function changeColor(element, color) {
+          document.getElementsByClassName(element)[0].style.backgroundColor = color;
+        }
+        changeColor('main-content', colorTrybe);
+
+        /* 3. Crie uma função que mude a cor do quadrado vermelho para branco. */
+        let colorWhite = 'white';
+        changeColor('center-content', colorWhite);
+
+        /* 4. Crie uma função que corrija o texto da tag <h1>. */
+        function replaceTextsByTag(element, index, textOriginal, textNew, firstOrAllBoolean, caseSensitiveBoolean) {
+          let i = '';
+          let g = '';
+          if (caseSensitiveBoolean) i = 'i';
+          if (firstOrAllBoolean) g = 'g';
+          const regex = `/${textOriginal}/${g}${i}`;
+          let result = document.getElementsByTagName(element)[index].innerHTML;
+          result = result.replace(new RegExp(textOriginal), textNew);
+          changeTextElementsByTag(element, index, result);
+        }
+        replaceTextsByTag('h1', 0, 'Escripito', 'Script', true, true);
+
+       /*  6. Crie uma função que exiba o conteúdo de todas as tags <p> no console. */
+        function elementsInConsole(element) {
+          let arrayTags = document.getElementsByTagName(element);
+          for (let index = 0; index < arrayTags.length; index += 1) {
+            console.log(arrayTags[index].innerHTML);
+          }
+        }
+        elementsInConsole('p');
+    </script>
+  </body>
+</html>
