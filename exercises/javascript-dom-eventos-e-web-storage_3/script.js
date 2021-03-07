@@ -59,14 +59,15 @@ botão com o nome "Feriados".
 Adicione a este botão a ID "btn-holiday" .
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container" . */
 
-const createBtn = (text, elParent, className) => {
+const createBtn = (text, elParent, cssTag) => {
   let btn = document.createElement('button');
   btn.innerText = text;
-  if (className) btn.classList.add(className);
+  if (cssTag && cssTag[0] === '.') btn.classList.add(cssTag.substring(1));
+  if (cssTag && cssTag[0] === '#') btn.id = cssTag.substring(1);
   document.querySelector(elParent).appendChild(btn);
 }
 
-createBtn('Feriados', '.buttons-container', 'btn-holiday');
+createBtn('Feriados', '.buttons-container', '.btn-holiday');
 
 /* Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a 
 cor de fundo dos dias que possuem a classe "holiday" .
@@ -96,3 +97,10 @@ const changeColor = (newColor, oldColor) => {
 }
 
 addEvListener('.btn-holiday', 'click', function (e) { changeColor('black', 'rgb(238, 238, 238)') })
+
+/* Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente 
+um botão com o nome "Sexta-feira".
+Adicione a este botão o ID "btn-friday" .
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container" . */
+
+createBtn('Sexta-Feira', '.buttons-container', '#btn-friday')
