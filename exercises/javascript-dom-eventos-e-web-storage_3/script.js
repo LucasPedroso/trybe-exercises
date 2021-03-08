@@ -178,10 +178,10 @@ const createInputWithLabel = (parentNode, labelText, id, type, placeholderText) 
   //0my.insertBefore(label, my.firstChild)//.appendChild(input);
 }
 
-createInputWithLabel('.my-tasks', 'Novo:', 'my-tasks-input', 'text', 'Escreva sua tarefa')
-createBtn('Adiciona Tarefa', '.my-tasks', '#btn-tasks', '5px')
+//createInputWithLabel('.my-tasks', 'Novo:', 'my-tasks-input', 'text', 'Escreva sua tarefa')
+//createBtn('Adiciona Tarefa', '.my-tasks', '#btn-tasks', '5px')
 
-const createTaskList = () => {
+/* const createTaskList = () => {
   let container = document.querySelector('#task1');
   let ul = document.createElement('ul');
   let containerDiv = document.createElement('div')
@@ -192,15 +192,26 @@ const createTaskList = () => {
   ul.id = 'task-list1'
   containerDiv.classList.add('task-list-container');
 }
-createTaskList();
+createTaskList(); */
 
-const addTask = () => {
-  let inputTask = document.querySelector('#my-tasks-input');
-  let li = document.createElement('li');
+const addTask = (task) => {
   let span = document.createElement('span');
-  li.appendChild(span);
-  span.innerText = inputTask.value;
-
-  document.querySelector('#task-list1').appendChild(li);
+  span.innerText = task;
+  document.querySelector('.my-tasks').appendChild(span);
 }
-addEvListener('#btn-tasks', 'click' , addTask)
+//addEvListener('#btn-tasks', 'click' , addTask)
+addTask('Skate');
+
+/* Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. 
+Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um 
+elemento de tag <div> com a classe task .
+O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" . */
+
+const addLegend = (color) => {
+  let div = document.createElement('div');
+  div.classList.toggle('task');
+  div.style.backgroundColor = color;
+  document.querySelector('.my-tasks').appendChild(div);
+}
+addLegend('green');
