@@ -122,3 +122,36 @@ const toggleTextDays = (days, text, elCSS) => {
   }
 }
 addEvListener('#btn-friday', 'click', function (e) { toggleTextDays(fridays, 'Sexta-Feira', '.friday') })
+
+/* Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um 
+dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair 
+do dia, o texto deve retornar ao tamanho original. */
+
+//zoom é estilização, por isso decide buscar uma solução que fizesse mais sentido para mim
+const zoomDays = () => {
+  var css = `
+  #days li:hover { 
+    transform: scale(2.5);
+    color: #777;
+    display: inline-block;
+    font-size:20px;
+    margin: 5px 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 13.6%; 
+  } 
+  #days li { 
+    transition: transform .2s; 
+}
+`;
+  var style = document.createElement('style');
+
+  if (style.styleSheet) {
+      style.styleSheet.cssText = css;
+  } else {
+      style.appendChild(document.createTextNode(css));
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(style);
+}
+zoomDays();
