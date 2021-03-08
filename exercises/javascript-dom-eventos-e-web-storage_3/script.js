@@ -59,9 +59,10 @@ botão com o nome "Feriados".
 Adicione a este botão a ID "btn-holiday" .
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container" . */
 
-const createBtn = (text, elParent, cssTag) => {
+const createBtn = (text, elParent, cssTag, margin) => {
   let btn = document.createElement('button');
   btn.innerText = text;
+  btn.style.margin = margin;
   if (cssTag && cssTag[0] === '.') btn.classList.add(cssTag.substring(1));
   if (cssTag && cssTag[0] === '#') btn.id = cssTag.substring(1);
   document.querySelector(elParent).appendChild(btn);
@@ -156,3 +157,55 @@ const zoomDays = () => {
   document.getElementsByTagName('head')[0].appendChild(style);
 }
 zoomDays();
+
+/* Implemente uma função que adiciona uma tarefa personalizada ao calendário. 
+A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e 
+criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" . */
+
+
+const createInputWithLabel = (parentNode, labelText, id, type, placeholderText) => {
+  let input = document.createElement('input');
+  input.type = type;
+  input.id = id;
+  input.placeholder = placeholderText;
+  let label = document.createElement('label');
+  label.for = id;
+  label.innerText = labelText
+  
+  document.querySelector(parentNode).appendChild(label)
+  document.querySelector(parentNode).appendChild(input);
+  //0my.insertBefore(label, my.firstChild)//.appendChild(input);
+}
+
+createInputWithLabel('.my-tasks', 'Novo:', 'my-tasks-input', 'text', 'Escreva sua tarefa')
+createBtn('Adiciona Tarefa', '.my-tasks', '#btn-tasks', '5px')
+
+const createTaskList = () => {
+  let container = document.querySelector('#task1');
+  let ul = document.createElement('ul');
+  let containerDiv = document.createElement('div')
+  containerDiv.appendChild(ul);
+  containerDiv.id = 'task-list-container1';
+  container.appendChild(containerDiv);
+  ul.classList.add('task-list');
+  ul.id = 'task-list1'
+  containerDiv.classList.add('task-list-container');
+}
+createTaskList();
+
+const addTask = () => {
+  let inputTask = document.querySelector('#my-tasks-input');
+  let li = document.createElement('li');
+  let span = document.createElement('span');
+  li.appendChild(span);
+  span.innerText = inputTask.value;
+
+
+  document.querySelector('#task-list1').appendChild(li);
+}
+addEvListener('#btn-tasks', 'click' , addTask)
+{/* <div class="task-list-container">
+<ul class="task-list">
+</ul>
+</div> */}
