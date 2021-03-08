@@ -201,11 +201,6 @@ const addTask = () => {
   li.appendChild(span);
   span.innerText = inputTask.value;
 
-
   document.querySelector('#task-list1').appendChild(li);
 }
 addEvListener('#btn-tasks', 'click' , addTask)
-{/* <div class="task-list-container">
-<ul class="task-list">
-</ul>
-</div> */}
