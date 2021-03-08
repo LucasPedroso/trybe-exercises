@@ -91,6 +91,7 @@ const changeColor = (newColor, oldColor) => {
     if (el.style.backgroundColor === newColor) {
       el.style.backgroundColor = oldColor;
     } else {
+      el.style.borderRadius = '15px';
       el.style.backgroundColor = newColor;
     }
   }
