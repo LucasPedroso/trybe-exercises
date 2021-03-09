@@ -123,13 +123,14 @@ const toggleTextDays = (days, text, elCSS) => {
     }
   }
 }
+
 addEvListener('#btn-friday', 'click', function (e) { toggleTextDays(fridays, 'Sexta-Feira', '.friday') })
 
 /* Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um 
 dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair 
 do dia, o texto deve retornar ao tamanho original. */
 
-//zoom é estilização, por isso decide buscar uma solução que fizesse mais sentido para mim
+//zoom é estilização, por isso decide buscar uma solução em JS que fizesse mais sentido para mim
 const zoomDays = () => {
   var css = `
   #days li:hover { 
@@ -156,13 +157,13 @@ const zoomDays = () => {
 
   document.getElementsByTagName('head')[0].appendChild(style);
 }
+
 zoomDays();
 
 /* Implemente uma função que adiciona uma tarefa personalizada ao calendário. 
 A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e 
 criar dinamicamente um elemento com a tag <span> contendo a tarefa.
 O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" . */
-
 
 const createInputWithLabel = (parentNode, labelText, id, type, placeholderText) => {
   let input = document.createElement('input');
@@ -172,34 +173,17 @@ const createInputWithLabel = (parentNode, labelText, id, type, placeholderText) 
   let label = document.createElement('label');
   label.for = id;
   label.innerText = labelText
-  
+
   document.querySelector(parentNode).appendChild(label)
   document.querySelector(parentNode).appendChild(input);
-  //0my.insertBefore(label, my.firstChild)//.appendChild(input);
 }
-
-//createInputWithLabel('.my-tasks', 'Novo:', 'my-tasks-input', 'text', 'Escreva sua tarefa')
-//createBtn('Adiciona Tarefa', '.my-tasks', '#btn-tasks', '5px')
-
-/* const createTaskList = () => {
-  let container = document.querySelector('#task1');
-  let ul = document.createElement('ul');
-  let containerDiv = document.createElement('div')
-  containerDiv.appendChild(ul);
-  containerDiv.id = 'task-list-container1';
-  container.appendChild(containerDiv);
-  ul.classList.add('task-list');
-  ul.id = 'task-list1'
-  containerDiv.classList.add('task-list-container');
-}
-createTaskList(); */
 
 const addTask = (task) => {
   let span = document.createElement('span');
   span.innerText = task;
   document.querySelector('.my-tasks').appendChild(span);
 }
-//addEvListener('#btn-tasks', 'click' , addTask)
+
 addTask('Skate');
 
 /* Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. 
@@ -214,6 +198,7 @@ const addLegend = (color) => {
   div.style.backgroundColor = color;
   document.querySelector('.my-tasks').appendChild(div);
 }
+
 addLegend('green');
 
 /* Implemente uma função que adiciona um evento que ao clicar no elemento com a 
@@ -244,6 +229,7 @@ const toggleColorDays = (ev, color) => {
 }
 
 //Referência https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+//Não é usado, porém deixei para estudos posteriores.
 const rgbToHex = (r, g, b) => '#' + [r, g, b]
   .map(x => x.toString(16).padStart(2, '0')).join('');
 
@@ -251,6 +237,7 @@ const getBackgroundColorTask = () => {
   let task = document.querySelector('.task');
   return task.style.backgroundColor;
 }
+
 addEvListener('#days', 'click', function (e) { toggleColorDays(e, getBackgroundColorTask()) });
 
 /* Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um 
