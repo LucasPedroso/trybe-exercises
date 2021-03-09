@@ -252,3 +252,24 @@ const getBackgroundColorTask = () => {
   return task.style.backgroundColor;
 }
 addEvListener('#days', 'click', function (e) { toggleColorDays(e, getBackgroundColorTask()) });
+
+/* Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um 
+compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao 
+clicar no botão "ADICIONAR".
+Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma 
+mensagem de erro ao clicar em "ADICIONAR".
+Ao pressionar a tecla "enter" o evento também deverá ser disparado. */
+
+const addTaskInList = () => {
+  let input = document.getElementById('task-input');
+  let ul = document.querySelector('.task-list');
+  let li = document.createElement('li')
+  li.innerText = input.value;
+  ul.appendChild(li);
+}
+addEvListener('#btn-add', 'click', addTaskInList);
+addEvListener('#task-input', 'keyup', function (e) { 
+  if (e.key == 'Enter' || e.keyCode == 13) {
+    addTaskInList();
+  }
+});
