@@ -133,7 +133,7 @@ do dia, o texto deve retornar ao tamanho original. */
 const zoomDays = () => {
   var css = `
   #days li:hover { 
-    transform: scale(2.5);
+    transform: scale(1.7);
     color: #777;
     display: inline-block;
     font-size:20px;
@@ -231,3 +231,24 @@ addEvListener('.task', 'click', function (e) { toggleClass('.task', 'selected') 
 /* Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, 
 atribua a este dia a cor da legenda da sua tarefa selecionada.
 Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119, 119, 119) . */
+
+const toggleColorDays = (ev, color) => {
+  let elementNode = ev.target;
+  console.log(elementNode);
+  console.log('b ' + elementNode.style.color);
+  if (elementNode.style.color !== color ) {
+    elementNode.style.color = color;
+  } else {
+    elementNode.style.color = 'rgb(119, 119, 119)';
+  }
+}
+
+//Referência https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+const rgbToHex = (r, g, b) => '#' + [r, g, b]
+  .map(x => x.toString(16).padStart(2, '0')).join('');
+
+const getBackgroundColorTask = () => {
+  let task = document.querySelector('.task');
+  return task.style.backgroundColor;
+}
+addEvListener('#days', 'click', function (e) { toggleColorDays(e, getBackgroundColorTask()) });
