@@ -98,7 +98,7 @@ const changeColor = (newColor, oldColor) => {
   }
 }
 
-addEvListener('.btn-holiday', 'click', function (e) { changeColor('black', 'rgb(238, 238, 238)') })
+addEvListener('.btn-holiday', 'click', function (e) { changeColorPixel('black', 'rgb(238, 238, 238)') })
 
 /* Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente 
 um botão com o nome "Sexta-feira".
@@ -211,7 +211,7 @@ const toggleClass = (elementNode, className) => {
   let element = document.querySelector(elementNode);
   element.classList.toggle(className);
 }
-addEvListener('.task', 'click', function (e) { toggleClass('.task', 'selected') });
+addEvListener('.task', 'click', function (e) { toggleClassInit('.task', 'selected') });
 
 /* Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, 
 atribua a este dia a cor da legenda da sua tarefa selecionada.
