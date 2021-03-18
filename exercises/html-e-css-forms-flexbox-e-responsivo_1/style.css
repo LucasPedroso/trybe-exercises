@@ -1,0 +1,15 @@
+input, textarea {
+  display: block;
+}
+
+[type = 'radio'] {
+  display: inline-block;
+}
+
+body {
+  background-color: coral;
+}
+
+.inline {
+  display: inline-block;
+}
