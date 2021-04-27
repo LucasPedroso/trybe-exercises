@@ -1,12 +1,12 @@
 import React from 'react';
 import data from './data';
-import Pokemon from './Pokemon'
-import pokedex from './Pokedex.css'
+import Pokemon from './Pokemon';
+import './Pokedex.css';
 
 
 class Pokedex extends React.Component {
   render() {
-    return (<ol>{data.map(pokemon => <Pokemon 
+    return (<ol className='pokedex'>{data.map(pokemon => <Pokemon 
       name={pokemon.name}
       image={pokemon.image}
       type={pokemon.type}

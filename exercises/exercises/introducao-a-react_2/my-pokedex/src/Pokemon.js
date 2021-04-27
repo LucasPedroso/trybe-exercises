@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pokemon from './Pokemon.css'
+import './Pokemon.css';
 
 class Pokemon extends React.Component {
   render() {
     return (
-      <li className={pokemon}>
+      <li className='pokemon'>
         <p>{this.props.name}</p>
         <img src={this.props.image} alt={this.props.name}/>
         <p>Tipo: {this.props.type}</p>
