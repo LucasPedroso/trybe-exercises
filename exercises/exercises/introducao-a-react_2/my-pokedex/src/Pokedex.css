@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+div {
+  width: 250px;
+}
+
+body {
+  display: flex;
+}
