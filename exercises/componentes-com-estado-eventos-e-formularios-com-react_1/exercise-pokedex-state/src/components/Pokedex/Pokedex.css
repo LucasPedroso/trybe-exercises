@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
+}
