@@ -1,0 +1,42 @@
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.4rem;
+  margin: 13px;
+
+}
+
+h1 {
+  font-size: 0.8em;
+}
+
+h2 {
+  font-size: 0.8em;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 560px) {
+  body {
+    background-color: orange;
+    font-size: 1.6rem;
+    margin: 30px;
+  }
+
+  figure {
+    
+  }
+}
+
+/* Altere a cor de fundo (isso vai te ajudar a perceber quando a media query teve efeito) ; */
+/* Ajuste o tamanho da fonte; */
+/* Ajuste as margens da página; */
+/* Faça as imagens serem mostradas em duas colunas. */
