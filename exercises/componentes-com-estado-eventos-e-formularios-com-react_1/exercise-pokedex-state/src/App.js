@@ -8,6 +8,7 @@ function App() {
     <main className="App">
       <h1> Pokedex </h1>
       <Pokedex pokemons={pokemons} />
+      
     </main>
   );
 }
